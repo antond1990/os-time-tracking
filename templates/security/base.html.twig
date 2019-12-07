@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="page">
+        <div class="page-single">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-login mx-auto">
+                        <div class="text-center mb-6">
+                            {% if app_logo_path|length > 2 %}
+                                <img src="{{ app_logo_path }}" height="38px">
+                            {% else %}
+                                <h3>OS TimeTracking</h3>
+                            {% endif %}
+                        </div>
+                        {% block form_body %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'time_entry.headlines.index'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ 'time_entry.headlines.index'|trans }}</h3>
+            <div class="card-options">
+                <form action="">
+                    <div class="input-group">
+                        <label for="search-list" class="sr-only">{{ 'time_entry.index.search'|trans }}</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="{{ 'time_entry.index.search'|trans }}" name="q" id="search-list" value="{{ search_query }}">
+                        <span class="input-group-btn ml-2">
+                            <button class="btn btn-sm btn-default" type="submit">
+                                <span class="fe fe-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <a href="{{ path('time_entry_new') }}" class="btn btn-primary btn-sm ml-2">
+                    <i class="fe fe-plus-circle"></i> {{ 'time_entry.buttons.new'|trans }}
+                </a>
+            </div>
+        </div>
+
+        <table class="table card-table">
+            <thead>
+            <tr>
+                <th>{{ 'time_entry.columns.id'|trans }}</th>
+                <th>{{ 'time_entry.columns.task'|trans }}</th>
+                <th>{{ 'time_entry.columns.project'|trans }}</th>
+                <th>{{ 'time_entry.columns.customer'|trans }}</th>
+                <th>{{ 'time_entry.columns.day'|trans }}</th>
+                <th>{{ 'time_entry.columns.time'|trans }}</th>
+                <th>{{ 'time_entry.columns.created_at'|trans }}</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for timeEntry in timeEntries %}
+                <tr>
+                    <td><a href="{{ path('time_entry_show', {'id': timeEntry.id}) }}">{{ timeEntry.id }}</a></td>
+                    <td>
+                        <strong>
+                            <a href="{{ path('task_show', {'id': timeEntry.task.id}) }}">
+                                {{ timeEntry.task.name }}
+                            </a><br />
+                            {{ include('parts/_done_badge.html.twig', {value: timeEntry.task.isDone}) }}
+                        </strong>
+                    </td>
+                    <td>
+                        <strong>
+                            <a href="{{ path('project_show', {'id': timeEntry.task.project.id}) }}">
+                                {{ timeEntry.task.project.name }}
+                            </a><br />
+                            {{ include('parts/_active_badge.html.twig', {value: timeEntry.task.project.isActive}) }}
+                        </strong>
+                    </td>
+                    <td>
+                        <strong>
+                            <a href="{{ path('customer_show', {'id': timeEntry.task.project.customer.id}) }}">
+                                {{ timeEntry.task.project.customer.name }}
+                            </a><br />
+                            {{ include('parts/_active_badge.html.twig', {value: timeEntry.task.project.customer.isActive}) }}
+                        </strong>
+                    </td>
+                    <td>{{ timeEntry.day|date('date_format'|trans) }}</td>
+                    <td>{{ timeEntry.time }}</td>
+                    <td>{{ timeEntry.createdAt ? timeEntry.createdAt|date('datetime_format'|trans) : '' }}</td>
+                    <td>
+                        <a href="{{ path('time_entry_delete', {'id': timeEntry.id}) }}" class="btn btn-outline-danger btn-sm">
+                            <i class="fe fe-trash"></i>
+                            {{ 'time_entry.buttons.delete'|trans }}
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">{{ 'time_entry.index.empty'|trans }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

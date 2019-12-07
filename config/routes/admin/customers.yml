@@ -1,0 +1,19 @@
+customer_index:
+  path: /
+  controller: App\Controller\Admin\CustomerController:index
+
+customer_new:
+  path: /new
+  controller: App\Controller\Admin\CustomerController:new
+
+customer_edit:
+  path: /edit/{id}
+  controller: App\Controller\Admin\CustomerController:edit
+
+customer_delete:
+  path: /delete/{id}
+  controller: App\Controller\Admin\CustomerController:delete
+
+customer_show:
+  path: /show/{id}
+  controller: App\Controller\Admin\CustomerController:show

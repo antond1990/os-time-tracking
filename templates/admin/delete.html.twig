@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'customer.delete.headline'|trans }}{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+    <div class="card">
+        <div class="card-status bg-red"></div>
+        <div class="card-header">
+            <h3 class="card-title">{{ 'customer.delete.headline'|trans }}</h3>
+        </div>
+
+        <div class="card-body">
+            <p>{{ 'customer.delete.question'|trans }}</p>
+            <p>
+                ID: {{ object.id }}<br />
+                <strong>{{ object.name }}</strong>
+            </p>
+        </div>
+
+        <div class="card-footer">
+            <a href="{{ path('customer_index') }}" class="btn btn-outline-danger float-right">{{ 'customer.buttons.cancel'|trans }}</a>
+            <button class="btn btn-danger"><i class="fe fe-trash"></i> {{ 'customer.buttons.delete'|trans }}</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,3 @@
+analyse_index:
+  path: /
+  controller: App\Controller\AnalysesController:index

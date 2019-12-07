@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'dashboard.headline'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="row row-cards">
+        <div class="col-4">
+            <div class="card card-aside">
+                <div class="card-aside-column p-5">
+                    <i class="fe fe-clock" style="font-size: 80px;margin: 20px;"></i>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4>{{ 'dashboard.boxes.timetracking.headline'|trans }}</h4>
+                    <a href="{{ path('time_entry_index') }}" class="btn btn-sm btn-block btn-primary">{{ 'dashboard.boxes.timetracking.button'|trans }}
+                        <i class="fe fe-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card card-aside">
+                <div class="card-aside-column p-5">
+                    <i class="fe fe-layers" style="font-size: 50px;margin: 20px;"></i>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h4>{{ 'dashboard.boxes.tasks.headline'|trans }}</h4>
+                    <a href="{{ path('task_index') }}" class="btn btn-sm btn-block btn-primary">{{ 'dashboard.boxes.tasks.button'|trans }}
+                        <i class="fe fe-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="col-4">
+                <div class="card card-aside">
+                    <div class="card-aside-column p-5">
+                        <i class="fe fe-briefcase" style="font-size: 50px;margin: 20px;"></i>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4><i class="fe fe-lock"></i> {{ 'dashboard.boxes.customers.headline'|trans }}</h4>
+                        <a href="{{ path('customer_index') }}" class="btn btn-sm btn-block btn-primary">{{ 'dashboard.boxes.customers.button'|trans }}
+                            <i class="fe fe-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card card-aside">
+                    <div class="card-aside-column p-5">
+                        <i class="fe fe-sunrise" style="font-size: 50px;margin: 20px;"></i>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4><i class="fe fe-lock"></i> {{ 'dashboard.boxes.projects.headline'|trans }}</h4>
+                        <a href="{{ path('project_index') }}" class="btn btn-sm btn-block btn-primary">{{ 'dashboard.boxes.projects.button'|trans }}
+                            <i class="fe fe-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card card-aside">
+                    <div class="card-aside-column p-5">
+                        <i class="fe fe-users" style="font-size: 50px;margin: 20px;"></i>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4><i class="fe fe-lock"></i> {{ 'dashboard.boxes.users.headline'|trans }}</h4>
+                        <a href="{{ path('admin_user_index') }}" class="btn btn-sm btn-block btn-primary">{{ 'dashboard.boxes.users.button'|trans }}
+                            <i class="fe fe-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

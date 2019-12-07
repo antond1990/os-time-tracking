@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'user.headlines.index'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ 'user.headlines.index'|trans }}</h3>
+            <div class="card-options">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" placeholder="{{ 'user.index.search'|trans }}" name="q" value="{{ search_query }}">
+                        <span class="input-group-btn ml-2">
+                            <button class="btn btn-sm btn-default" type="submit">
+                              <span class="fe fe-search"></span>
+                            </button>
+                         </span>
+                    </div>
+                </form>
+                <a href="{{ path('customer_new') }}" class="btn btn-primary btn-sm ml-2"><i class="fe fe-plus-circle"></i> {{ 'user.buttons.new'|trans }}</a>
+
+            </div>
+        </div>
+
+        <table class="table card-table">
+            <thead>
+            <tr>
+                <th>{{ 'user.columns.id'|trans }}</th>
+                <th>{{ 'user.columns.email'|trans }}</th>
+                <th>{{ 'user.columns.roles'|trans }}</th>
+                <th>{{ 'user.columns.name'|trans }}</th>
+                <th>{{ 'user.columns.projects'|trans }}</th>
+                <th>{{ 'user.columns.customers'|trans }}</th>
+                <th>{{ 'user.columns.created_at'|trans }}</th>
+                <th>{{ 'user.columns.updated_at'|trans }}</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>
+                        {{ include('parts/_user_label.html.twig') }}
+                    </td>
+                    <td>
+                        {% for role in user.roles %}
+                            <div class="badge badge-info">{{ ('user.roles.' ~ role)|trans }}</div><br />
+                        {% endfor %}
+                    </td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.projects|length }}</td>
+                    <td>{{ user.customers|length }}</td>
+                    <td>{{ user.createdAt ? user.createdAt|date('datetime_format'|trans) : '' }}</td>
+                    <td>{{ user.updatedAt ? user.updatedAt|date('datetime_format'|trans) : '' }}</td>
+                    <td>
+                        <a href="{{ path('admin_user_edit', {'id': user.id}) }}" class="btn btn-outline-primary btn-sm"><i
+                                    class="fe fe-edit"></i> {{ 'user.buttons.edit'|trans }}</a>
+                        <a href="{{ path('admin_user_delete', {'id': user.id}) }}" class="btn btn-outline-danger btn-sm"><i
+                                    class="fe fe-trash"></i> {{ 'user.buttons.delete'|trans }}</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">{{ 'user.index.empty'|trans }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'project.headlines.index'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ 'project.headlines.index'|trans }}</h3>
+            <div class="card-options">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" placeholder="{{ 'project.index.search'|trans }}" name="q" value="{{ search_query }}">
+                        <span class="input-group-btn ml-2">
+                            <button class="btn btn-sm btn-default" type="submit">
+                                <span class="fe fe-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <a href="{{ path('project_new') }}" class="btn btn-primary btn-sm ml-2">
+                    <i class="fe fe-plus-circle"></i> {{ 'project.buttons.new'|trans }}
+                </a>
+            </div>
+        </div>
+
+        <table class="table card-table">
+            <thead>
+            <tr>
+                <th>{{ 'project.columns.id'|trans }}</th>
+                <th>{{ 'project.columns.name'|trans }}</th>
+                <th>{{ 'project.columns.customer'|trans }}</th>
+                <th>{{ 'project.columns.budget_hours'|trans }}</th>
+                <th>{{ 'project.columns.created_at'|trans }}</th>
+                <th>{{ 'project.columns.updated_at'|trans }}</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for project in projects %}
+                <tr>
+                    <td>{{ project.id }}</td>
+                    <td>
+                        {{ include('parts/_project_label.html.twig') }}
+                    </td>
+                    <td>
+                        {{ include('parts/_customer_label.html.twig', {customer: project.customer}) }}
+                    </td>
+                    <td>{{ project.budgetHours }}</td>
+                    <td>{{ project.createdAt ? project.createdAt|date('datetime_format'|trans) : '' }}</td>
+                    <td>{{ project.updatedAt ? project.updatedAt|date('datetime_format'|trans) : '' }}</td>
+                    <td>
+                        <a href="{{ path('project_edit', {'id': project.id}) }}" class="btn btn-sm btn-outline-primary">
+                            <i class="fe fe-edit"></i>
+                            {{ 'project.buttons.edit'|trans }}
+                        </a>
+                        <a href="{{ path('project_delete', {'id': project.id}) }}" class="btn btn-outline-danger btn-sm">
+                            <i class="fe fe-trash"></i>
+                            {{ 'project.buttons.delete'|trans }}
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">{{ 'project.index.empty'|trans }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

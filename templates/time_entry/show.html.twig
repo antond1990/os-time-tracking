@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'time_entry.headlines.show'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                {{ 'time_entry.headlines.show'|trans }}
+                <span class="text-muted">#{{ timeEntry.id }}</span>
+            </h3>
+            <div class="card-options">
+                <a href="{{ path('time_entry_index') }}" class="btn btn-outline-dark btn-sm mr-2">
+                    <i class="fe fe-chevron-left"></i>
+                    {{ 'time_entry.buttons.back'|trans }}
+                </a>
+                <a href="{{ path('time_entry_edit', {'id': timeEntry.id}) }}" class="btn btn-outline-primary btn-sm">
+                    <i class="fe fe-edit"></i>
+                    {{ 'time_entry.buttons.edit'|trans }}
+                </a>
+            </div>
+        </div>
+        <table class="table card-table">
+            <tbody>
+            <tr>
+                <th>{{ 'time_entry.columns.task'|trans }}</th>
+                <td>
+                    <strong>{{ timeEntry.task.name }} ({{ timeEntry.task.project.name }})</strong>
+                </td>
+            </tr>
+            <tr>
+                <th>{{ 'time_entry.columns.day'|trans }}</th>
+                <td>{{ timeEntry.day|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'time_entry.columns.time'|trans }}</th>
+                <td>{{ timeEntry.time|date('H:i') }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'time_entry.columns.created_at'|trans }}</th>
+                <td>{{ timeEntry.createdAt ? timeEntry.createdAt|date('datetime_format'|trans) : '' }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'time_entry.columns.updated_at'|trans }}</th>
+                <td>{{ timeEntry.updatedAt ? timeEntry.updatedAt|date('datetime_format'|trans) : '' }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

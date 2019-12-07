@@ -1,0 +1,19 @@
+task_index:
+  path: /
+  controller: App\Controller\TaskController:index
+
+task_new:
+  path: /new
+  controller: App\Controller\TaskController:new
+
+task_edit:
+  path: /edit/{id}
+  controller: App\Controller\TaskController:edit
+
+task_delete:
+  path: /delete/{id}
+  controller: App\Controller\TaskController:delete
+
+task_show:
+  path: /show/{id}
+  controller: App\Controller\TaskController:show

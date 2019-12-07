@@ -1,0 +1,255 @@
+datetime_format: 'd.m.Y H:i'
+date_format: 'd.m.Y'
+
+security:
+  message:
+    logged_in_as: 'Angemeldet als'
+
+  login:
+    headline: 'Anmelden'
+    form:
+      email: 'E-Mail'
+      password: 'Passwort'
+      remember_me: 'Benutzerdaten merken'
+      login: 'Anmelden'
+
+  link:
+    logout: 'Abmelden'
+
+menu:
+  dashboard: 'Dashboard'
+  timetracking: 'Zeiten'
+  customers: 'Kunden'
+  projects: 'Projekte'
+  tasks: 'Aufgaben'
+  users: 'Benutzer'
+  analyses: 'Auswertungen'
+
+parts:
+  active_badge:
+    active: 'aktiv'
+    inactive: 'inaktiv'
+  done_badge:
+    done: 'erledigt'
+    not_completed: 'nicht erledigt'
+
+customer:
+  messages:
+    new_successfull: 'Der Kunde wurde erfolgreich gespeichert.'
+    edit_successfull: 'Der Kunde wurde erfolgreich gespeichert.'
+    deleted_successfull: 'Der Kunde wurde erfolgreich gespeichert.'
+
+  buttons:
+    save: 'Daten speichern'
+    cancel: 'Abbrechen'
+    delete: 'Löschen'
+
+  index:
+    new: 'Kunden hinzufügen'
+    headline: 'Kunden'
+    id: 'ID'
+    name: 'Name'
+    projects: 'Projekte'
+    is_active: 'Aktiv?'
+    created_at: 'Erstellt am'
+    updated_at: 'Aktualisiert am'
+    delete: 'Löschen'
+    show: 'Anzeigen'
+    edit: 'Bearbeiten'
+    search: 'Suchen'
+    active: 'aktiv'
+    inactive: 'inaktiv'
+    empty: 'Keine Datensätze vorhanden.'
+
+  edit:
+    headline: 'Kunden bearbeiten'
+
+  new:
+    headline: 'Kunden hinzufügen'
+
+  delete:
+    headline: 'Kunden löschen?'
+    question: 'Möchten Sie den Kundendatensatz wirklich löschen?'
+
+  show:
+    headline: 'Kunde'
+    back: 'Zurück'
+    edit: 'Bearbeiten'
+    name: 'Name'
+    is_active: 'Aktiv?'
+    created_at: 'Erstellt am'
+    updated_at: 'Aktualisiert am'
+
+project:
+  messages:
+    new_successful: 'Das Projekt wurde erfolgreich gespeichert.'
+    edit_successful: 'Das Projekt wurde erfolgreich gespeichert.'
+    deleted_successful: 'Das Projekt wurde erfolgreich gespeichert.'
+
+  headlines:
+    index: 'Projekte'
+    show: 'Projekt'
+    new: 'Projekt hinzufügen'
+    edit: 'Projekt bearbeiten'
+    delete: 'Projekt löschen'
+
+  buttons:
+    back: 'Zurück'
+    new: 'Projekt erstellen'
+    edit: 'Bearbeiten'
+    save: 'Speichern'
+    cancel: 'Abbrechen'
+    delete: 'Löschen'
+
+  columns:
+    id: 'ID'
+    name: 'Name'
+    customer: 'Kunde'
+    is_active: 'Aktiv?'
+    budget_hours: 'Zeitbudget'
+    created_at: 'Erstellt am'
+    updated_at: 'Aktualisiert am'
+
+  index:
+    search: 'Suchen'
+    empty: 'Es wurden keine Datensätze gefunden.'
+
+  delete:
+    question: 'Wollen Sie diesen Eintrag wirklich löschen?'
+
+user:
+  headlines:
+    index: 'Benutzer'
+    new: 'Benutzer hinzufügen'
+    edit: 'Benutzer bearbeiten'
+
+  buttons:
+    back: 'Zurück'
+    new: 'Benutzer hinzufügen'
+    edit: 'Bearbeiten'
+    save: 'Speichern'
+    cancel: 'Abbrechen'
+    delete: 'Löschen'
+
+  columns:
+    id: 'ID'
+    email: 'E-Mail'
+    roles: 'Rolle(n)'
+    name: 'Name'
+    firstname: 'Vorname'
+    lastname: 'Nachname'
+    customers: 'Kunden'
+    projects: 'Projekte'
+    created_at: 'Erstellt am'
+    updated_at: 'Aktualisiert am'
+
+  index:
+    search: 'Suchen'
+    empty: 'Es wurden keine passenden Datensätze gefunden.'
+
+  roles:
+    ROLE_ADMIN: 'Administrator'
+    ROLE_USER: 'Normaler Benutzer'
+
+task:
+  messages:
+    new_successful: 'Die Aufgabe wurde erfolgreich erstellt.'
+    edit_successful: 'Die Aufgabe wurde erfolgreich erstellt.'
+    deleted_successful: 'Die Aufgabe wurde erfolgreich erstellt.'
+
+  headlines:
+    index: 'Aufgaben'
+    show: 'Aufgabe'
+    new: 'Aufgabe erstellen'
+    edit: 'Aufgabe bearbeiten'
+    delete: 'Aufgabe löschen'
+
+  buttons:
+    back: 'Zurück'
+    new: 'Aufgabe hinzufügen'
+    edit: 'Bearbeiten'
+    save: 'Speichern'
+    cancel: 'Abbrechen'
+    delete: 'Löschen'
+
+  columns:
+    id: 'ID'
+    name: 'Name'
+    project: 'Projekt'
+    is_done: 'Erledigt?'
+    created_at: 'Erstellt am'
+    updated_at: 'Aktualisiert am'
+
+  index:
+    search: 'Suchen'
+    empty: 'Keine Datensätze gefunden.'
+
+  delete:
+    question: 'Wollen Sie diesen Datensatz wirklich löschen?'
+
+time_entry:
+  messages:
+    new_successful: 'Der Zeiteintrag wurde erfolgreich gespeichert.'
+    edit_successful: 'Der Zeiteintrag wurde erfolgreich gespeichert.'
+    deleted_successful: 'Der Zeiteintrag wurde erfolgreich gespeichert.'
+    no_tasks_message: 'Bevor Sie einen Zeiteintrag erstellen können, müssen Aufgaben zu bestehenden Projekten hinterlegt werden. Bitte legen Sie jetzt eine Aufgabe an.'
+
+  headlines:
+    index: 'Zeiteinträge'
+    show: 'Zeiteintrag'
+    new: 'Zeiteintrag hinzufügen'
+    edit: 'Zeiteintrag bearbeiten'
+    delete: 'Zeiteintrag löschen'
+
+  buttons:
+    back: 'Zurück'
+    new: 'Zeiteintrag hinzufügen'
+    edit: 'Bearbeiten'
+    save: 'Speichern'
+    cancel: 'Abbrechen'
+    delete: 'Löschen'
+
+  columns:
+    id: 'ID'
+    task: 'Aufgabe'
+    project: 'Projekt'
+    customer: 'Kunde'
+    day: 'Tag'
+    time: 'Dauer (min)'
+    created_at: 'Erstellt am'
+    updated_at: 'Aktualisiert am'
+
+  index:
+    search: 'Suchen'
+    empty: 'Keine Einträge gefunden.'
+
+  delete:
+    question: 'Möchten Sie diesen Datensatz wirklich löschen?'
+
+  form:
+    fields:
+      time: 'Zeit in Minuten'
+
+dashboard:
+  headline: 'Dashboard'
+
+  boxes:
+    timetracking:
+      headline: 'Zeiterfassung'
+      button: 'Zeiterfassung'
+
+    customers:
+      headline: 'Kunden verwalten'
+      button: 'Kunden'
+
+    projects:
+      headline: 'Projekte verwalten'
+      button: 'Projekte'
+
+    tasks:
+      headline: 'Aufgaben verwalten'
+      button: 'Aufgaben'
+
+    users:
+      headline: 'Benutzer verwalten'
+      button: 'Benutzer'

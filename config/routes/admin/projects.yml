@@ -1,0 +1,19 @@
+project_index:
+  path: /
+  controller: App\Controller\Admin\ProjectController:index
+
+project_new:
+  path: /new
+  controller: App\Controller\Admin\ProjectController:new
+
+project_edit:
+  path: /edit/{id}
+  controller: App\Controller\Admin\ProjectController:edit
+
+project_delete:
+  path: /delete/{id}
+  controller: App\Controller\Admin\ProjectController:delete
+
+project_show:
+  path: /show/{id}
+  controller: App\Controller\Admin\ProjectController:show

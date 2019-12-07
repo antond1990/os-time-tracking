@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'task.headlines.new'|trans }}{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ 'task.headlines.new'|trans }}</h3>
+        </div>
+
+        <div class="card-body">
+            {{ form_widget(form) }}
+        </div>
+
+        <div class="card-footer">
+            <a href="{{ path('task_index') }}" class="btn btn-outline-danger float-right">
+                {{ 'task.buttons.cancel'|trans }}
+            </a>
+            <button class="btn btn-primary">
+                <i class="fe fe-save"></i>
+                {{ 'task.buttons.save'|trans }}
+            </button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

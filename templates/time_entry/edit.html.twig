@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'time_entry.headlines.edit'|trans }}{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ 'time_entry.headlines.edit'|trans }}</h3>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    {{ form_row(form.task) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.day) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.time) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ form_row(form.memo) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <a href="{{ path('time_entry_index') }}" class="btn btn-outline-danger float-right">
+                {{ 'time_entry.buttons.cancel'|trans }}
+            </a>
+            <button class="btn btn-primary">
+                <i class="fe fe-save"></i>
+                {{ 'time_entry.buttons.save'|trans }}
+            </button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

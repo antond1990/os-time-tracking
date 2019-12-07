@@ -1,0 +1,255 @@
+datetime_format: 'Y-m-d H:i'
+date_format: 'Y-m-d'
+
+security:
+  message:
+    logged_in_as: 'Logged in as'
+
+  login:
+    headline: 'Login'
+    form:
+      email: 'E-Mail'
+      password: 'Password'
+      remember_me: 'Remember me'
+      login: 'Login'
+
+  link:
+    logout: 'Logout'
+
+menu:
+  dashboard: 'Dashboard'
+  timetracking: 'Time tracking'
+  customers: 'Customers'
+  projects: 'Projects'
+  tasks: 'Tasks'
+  users: 'Users'
+  analyses: 'Auswertungen'
+
+parts:
+  active_badge:
+    active: 'enabled'
+    inactive: 'disabled'
+  done_badge:
+    done: 'done'
+    not_completed: 'not completed'
+
+customer:
+  messages:
+    new_successfull: 'The customer was successfully created.'
+    edit_successfull: 'The changes were saved successfully.'
+    deleted_successfull: 'The customer was successfully deleted.'
+
+  buttons:
+    save: 'Save customer'
+    cancel: 'Cancel'
+    delete: 'Delete'
+
+  index:
+    new: 'Add customer'
+    headline: 'Customers'
+    id: 'ID'
+    name: 'Name'
+    projects: 'Projects'
+    is_active: 'Active?'
+    created_at: 'Created'
+    updated_at: 'Updated'
+    delete: 'Delete'
+    show: 'Show'
+    edit: 'Edit'
+    search: 'Search'
+    active: 'enabled'
+    inactive: 'disabled'
+    empty: 'No entries found.'
+
+  edit:
+    headline: 'Edit customer'
+
+  new:
+    headline: 'Add customer'
+
+  delete:
+    headline: 'Delete customer?'
+    question: 'Do you really want to delete this record?'
+
+  show:
+    headline: 'Customer'
+    back: 'Back'
+    edit: 'Edit'
+    name: 'Name'
+    is_active: 'Active?'
+    created_at: 'Created'
+    updated_at: 'Updated'
+
+project:
+  messages:
+    new_successful: 'The project was successfully created.'
+    edit_successful: 'The changes were saved successfully.'
+    deleted_successful: 'The project was successfully deleted.'
+
+  headlines:
+    index: 'Projects'
+    show: 'Project'
+    new: 'Add project'
+    edit: 'Edit project'
+    delete: 'Delete project'
+
+  buttons:
+    back: 'back'
+    new: 'Add project'
+    edit: 'Edit'
+    save: 'Save project'
+    cancel: 'Cancel'
+    delete: 'Delete'
+
+  columns:
+    id: 'ID'
+    name: 'Name'
+    customer: 'Customer'
+    is_active: 'Active?'
+    budget_hours: 'Time budget'
+    created_at: 'Created'
+    updated_at: 'Updated'
+
+  index:
+    search: 'Search'
+    empty: 'No entries found.'
+
+  delete:
+    question: 'Do you really want to delete this record?'
+
+user:
+  headlines:
+    index: 'Users'
+    new: 'Add user'
+    edit: 'Edit user'
+
+  buttons:
+    back: 'back'
+    new: 'Add user'
+    edit: 'Edit'
+    save: 'Save user'
+    cancel: 'Cancel'
+    delete: 'Delete'
+
+  columns:
+    id: 'ID'
+    email: 'Email'
+    roles: 'Roles'
+    name: 'Name'
+    firstname: 'Firstname'
+    lastname: 'Lastname'
+    customers: 'Customers'
+    projects: 'Projects'
+    created_at: 'Created'
+    updated_at: 'Updated'
+
+  index:
+    search: 'Search'
+    empty: 'No entries found.'
+
+  roles:
+    ROLE_ADMIN: 'Administrator'
+    ROLE_USER: 'User'
+
+task:
+  messages:
+    new_successful: 'The task was successfully created.'
+    edit_successful: 'The changes were saved successfully.'
+    deleted_successful: 'The project was successfully deleted.'
+
+  headlines:
+    index: 'Tasks'
+    show: 'Task'
+    new: 'Add task'
+    edit: 'Edit task'
+    delete: 'Delete task'
+
+  buttons:
+    back: 'back'
+    new: 'Add task'
+    edit: 'Edit'
+    save: 'Save task'
+    cancel: 'Cancel'
+    delete: 'Delete'
+
+  columns:
+    id: 'ID'
+    name: 'Name'
+    project: 'Project'
+    is_done: 'Done?'
+    created_at: 'Created'
+    updated_at: 'Updated'
+
+  index:
+    search: 'Search'
+    empty: 'No entries found.'
+
+  delete:
+    question: 'Do you really want to delete this record?'
+
+time_entry:
+  messages:
+    new_successful: 'The time entry was successfully created.'
+    edit_successful: 'The changes were saved successfully.'
+    deleted_successful: 'The time entry was successfully deleted.'
+    no_tasks_message: 'There are no tasks yet that you can use for time recording. Please add at least one task.'
+
+  headlines:
+    index: 'Time entries'
+    show: 'Time entry'
+    new: 'Add time entry'
+    edit: 'Edit time entry'
+    delete: 'Delete  time entry'
+
+  buttons:
+    back: 'back'
+    new: 'Add  time entry'
+    edit: 'Edit'
+    save: 'Save  time entry'
+    cancel: 'Cancel'
+    delete: 'Delete'
+
+  columns:
+    id: 'ID'
+    task: 'Task'
+    project: 'Project'
+    customer: 'Customer'
+    day: 'Day'
+    time: 'Time'
+    created_at: 'Created'
+    updated_at: 'Updated'
+
+  index:
+    search: 'Search'
+    empty: 'No entries found.'
+
+  delete:
+    question: 'Do you really want to delete this record?'
+
+  form:
+    fields:
+      time: 'Time in minutes'
+
+dashboard:
+  headline: 'Dashboard'
+
+  boxes:
+    timetracking:
+      headline: 'Time tracking'
+      button: 'Time tracking'
+
+    customers:
+      headline: 'Manage customers'
+      button: 'Customers'
+
+    projects:
+      headline: 'Manage projects'
+      button: 'Projects'
+
+    tasks:
+      headline: 'Manage tasks'
+      button: 'Tasks'
+
+    users:
+      headline: 'Manage users'
+      button: 'Users'

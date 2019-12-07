@@ -1,0 +1,5 @@
+{% if value == true %}
+    <div class="badge badge-success">{{ 'parts.done_badge.done'|trans }}</div>
+{% else %}
+    <div class="badge badge-danger">{{ 'parts.done_badge.not_completed'|trans }}</div>
+{% endif %}

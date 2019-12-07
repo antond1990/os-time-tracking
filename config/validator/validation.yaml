@@ -1,0 +1,24 @@
+App\Entity\Task:
+  properties:
+    name:
+      - NotBlank: { message: 'task.name.not_blank' }
+    project:
+      - NotBlank: { message: 'task.project.not_blank' }
+
+App\Entity\TimeEntry:
+  properties:
+    task:
+      - NotBlank: { message: 'time_entry.task.not_blank' }
+    time:
+      - NotBlank: { message: 'time_entry.time.not_blank' }
+      - Positive: { message: 'time_entry.time.time' }
+    day:
+      - NotBlank: { message: 'time_entry.day.not_blank' }
+      - Date: { message: 'time_entry.day.date' }
+
+App\Entity\Project:
+  properties:
+    name:
+      - NotBlank: { message: 'project.name.not_blank' }
+    customer:
+      - NotBlank: { message: 'project.customer.not_blank' }

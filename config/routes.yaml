@@ -1,0 +1,35 @@
+index:
+  path: /
+  controller: App\Controller\DefaultController:index
+
+login:
+  path: /login
+  controller: App\Controller\SecurityController:login
+
+logout:
+  path: /logout
+  controller: App\Controller\SecurityController:logout
+
+admin_users:
+  resource: 'routes/admin/users.yml'
+  prefix: /admin/users
+
+admin_projects:
+  resource: 'routes/admin/projects.yml'
+  prefix: /admin/projects
+
+admin_customers:
+  resource: 'routes/admin/customers.yml'
+  prefix: /admin/customers
+
+time_entries:
+  resource: 'routes/time_entries.yml'
+  prefix: /times
+
+tasks:
+  resource: 'routes/tasks.yml'
+  prefix: /tasks
+
+analyses:
+  resource: 'routes/analyses.yml'
+  prefix: /analyses

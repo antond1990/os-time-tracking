@@ -1,0 +1,19 @@
+time_entry_index:
+  path: /
+  controller: App\Controller\TimeEntryController:index
+
+time_entry_new:
+  path: /new
+  controller: App\Controller\TimeEntryController:new
+
+time_entry_edit:
+  path: /edit/{id}
+  controller: App\Controller\TimeEntryController:edit
+
+time_entry_delete:
+  path: /delete/{id}
+  controller: App\Controller\TimeEntryController:delete
+
+time_entry_show:
+  path: /show/{id}
+  controller: App\Controller\TimeEntryController:show

@@ -1,0 +1,5 @@
+<strong>
+    <a href="{{ path('admin_user_show', {'id': user.id}) }}">{{ user.email }}</a>
+</strong>
+<br />
+{{ include('parts/_active_badge.html.twig', {value: user.enabled}) }}

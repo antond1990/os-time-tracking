@@ -1,0 +1,21 @@
+task:
+  name:
+    not_blank: 'Please enter a name for this task'
+  project:
+    not_blank: 'Please select a project to assign the task'
+
+project:
+  name:
+    not_blank: 'Please enter a name for this project'
+  customer:
+    not_blank: 'Please select a customer to assign the project'
+
+time_entry:
+  task:
+    not_blank: 'Please select a task'
+  time:
+    not_blank: 'Please set a time'
+    time: 'Invalid time'
+  day:
+    not_blank: 'Please set a end time'
+    Date: 'Invalid date'

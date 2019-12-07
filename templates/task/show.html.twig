@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'task.headlines.show'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                {{ 'task.headlines.show'|trans }}
+                <span class="text-muted">#{{ task.id }}</span>
+            </h3>
+            <div class="card-options">
+                <a href="{{ path('task_index') }}" class="btn btn-outline-dark btn-sm mr-2">
+                    <i class="fe fe-chevron-left"></i>
+                    {{ 'task.buttons.back'|trans }}
+                </a>
+                <a href="{{ path('task_edit', {'id': task.id}) }}" class="btn btn-outline-primary btn-sm">
+                    <i class="fe fe-edit"></i>
+                    {{ 'task.buttons.edit'|trans }}
+                </a>
+            </div>
+        </div>
+        <table class="table card-table">
+            <tbody>
+            <tr>
+                <th>{{ 'task.columns.name'|trans }}</th>
+                <td>
+                    <strong>{{ task.name }}</strong>
+                </td>
+            </tr>
+            <tr>
+                <th>{{ 'task.columns.is_done'|trans }}</th>
+                <td>
+                    {{ include('parts/_active_badge.html.twig', {value: task.isDone}) }}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ 'task.columns.created_at'|trans }}</th>
+                <td>{{ task.createdAt ? task.createdAt|date('datetime_format'|trans) : '' }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'task.columns.updated_at'|trans }}</th>
+                <td>{{ task.updatedAt ? task.updatedAt|date('datetime_format'|trans) : '' }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

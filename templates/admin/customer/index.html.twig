@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'customer.index.headline'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ 'customer.index.headline'|trans }}</h3>
+            <div class="card-options">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" placeholder="{{ 'customer.index.search'|trans }}" name="q" value="{{ search_query }}">
+                        <span class="input-group-btn ml-2">
+                            <button class="btn btn-sm btn-default" type="submit">
+                              <span class="fe fe-search"></span>
+                            </button>
+                         </span>
+                    </div>
+                </form>
+                <a href="{{ path('customer_new') }}" class="btn btn-primary btn-sm ml-2"><i class="fe fe-plus-circle"></i> {{ 'customer.index.new'|trans }}</a>
+
+            </div>
+        </div>
+
+        <table class="table card-table">
+            <thead>
+            <tr>
+                <th>{{ 'customer.index.id'|trans }}</th>
+                <th>{{ 'customer.index.name'|trans }}</th>
+                <th>{{ 'customer.index.projects'|trans }}</th>
+                <th>{{ 'customer.index.created_at'|trans }}</th>
+                <th>{{ 'customer.index.updated_at'|trans }}</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.id }}</td>
+                    <td>
+                        {{ include('parts/_customer_label.html.twig') }}
+                    </td>
+                    <td>{{ customer.projects|length }}</td>
+                    <td>{{ customer.createdAt ? customer.createdAt|date('datetime_format'|trans) : '' }}</td>
+                    <td>{{ customer.updatedAt ? customer.updatedAt|date('datetime_format'|trans) : '' }}</td>
+                    <td>
+                        <a href="{{ path('customer_edit', {'id': customer.id}) }}" class="btn btn-outline-primary btn-sm"><i
+                                    class="fe fe-edit"></i> {{ 'customer.index.edit'|trans }}</a>
+                        <a href="{{ path('customer_delete', {'id': customer.id}) }}" class="btn btn-outline-danger btn-sm"><i
+                                    class="fe fe-trash"></i> {{ 'customer.index.delete'|trans }}</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">{{ 'customer.index.empty'|trans }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

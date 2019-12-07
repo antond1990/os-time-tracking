@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}{{ 'customer.show.headline'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ 'customer.show.headline'|trans }} <span class="text-muted">#{{ customer.id }}</span></h3>
+            <div class="card-options">
+                <a href="{{ path('customer_index') }}" class="btn btn-outline-dark btn-sm mr-2"><i
+                            class="fe fe-chevron-left"></i> {{ 'customer.show.back'|trans }}</a>
+                <a href="{{ path('customer_edit', {'id': customer.id}) }}" class="btn btn-outline-primary btn-sm"><i
+                            class="fe fe-edit"></i> {{ 'customer.show.edit'|trans }}</a>
+            </div>
+        </div>
+        <table class="table card-table">
+            <tbody>
+            <tr>
+                <th>{{ 'customer.show.name'|trans }}</th>
+                <td>
+                    <strong>{{ customer.name }}</strong>
+                </td>
+            </tr>
+            <tr>
+                <th>{{ 'customer.show.is_active'|trans }}</th>
+                <td>
+                    {{ include('parts/_active_badge.html.twig', {value: customer.isActive}) }}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ 'customer.show.created_at'|trans }}</th>
+                <td>{{ customer.createdAt ? customer.createdAt|date('datetime_format'|trans) : '' }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'customer.show.updated_at'|trans }}</th>
+                <td>{{ customer.updatedAt ? customer.updatedAt|date('datetime_format'|trans) : '' }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

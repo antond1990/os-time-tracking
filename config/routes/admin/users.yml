@@ -1,0 +1,15 @@
+admin_user_index:
+  path: /
+  controller: App\Controller\Admin\UserController:index
+
+admin_user_show:
+  path: /show/{id}
+  controller: App\Controller\Admin\UserController:show
+
+admin_user_edit:
+  path: /edit/{id}
+  controller: App\Controller\Admin\UserController:edit
+
+admin_user_delete:
+  path: /delete/{id}
+  controller: App\Controller\Admin\UserController:delete
